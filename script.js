@@ -35,16 +35,6 @@
     });
   });
   document.getElementById('next-step').addEventListener('click',()=>showStep(currentStep+1));
-  const answers=[
-    'See which orders have the stock they need, and which are still waiting on missing items.',
-    'Bring attention to products with limited availability and the orders affected by those shortages.',
-    'Find the recorded packing details and order references for the shipment you are asking about.',
-    'Review incoming purchase shipments, their suppliers and recorded delivery stages. Spot missing tracking references and shipments with no recent update.'
-  ];
-  document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',()=> {
-    document.querySelectorAll('[data-prompt]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
-    text('assistant-answer',answers[Number(button.dataset.prompt)]);
-  }));
   const toggle=document.querySelector('.menu-toggle');
   const nav=document.getElementById('main-nav');
   function closeMenu(){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');nav.classList.remove('open');}

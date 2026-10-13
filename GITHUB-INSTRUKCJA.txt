@@ -1,0 +1,28 @@
+IKUGO — PACZKA DO REPOZYTORIUM GITHUB
+Wersja: statyczna biblioteka ASK IKUGO, 66 scenariuszy, kwoty USD.
+Przygotowano: 13.10.2026. Niczego nie wypchnięto ani nie wdrożono.
+
+1. Rozpakuj ZIP. Nie wgrywaj samego pliku ZIP jako strony.
+2. Przenieś zawartość do głównego katalogu repozytorium marketingowej
+   strony IKUGO, zachowując assets/ oraz tests/. Pliki index.html
+   i netlify.toml muszą znajdować się w głównym katalogu repozytorium.
+3. Do oceny użyj gałęzi feature/ask-ikugo-library. Nie nadpisuj backendu
+   uchwyty. Publikacja lub połączenie zmian z gałęzią wdrażaną przez
+   Netlify to późniejsza, osobna decyzja.
+4. Jeżeli w repozytorium istnieją poniższe stare pliki, usuń je:
+   - ask-ikugo-config.js
+   - tests/capture-local-preview.cjs
+   ZIP nie potrafi usunąć istniejących plików podczas zwykłego uploadu.
+5. Lokalnie otwórz index.html i przejdź do sekcji 05 ASK IKUGO.
+
+Nie potrzeba zmiennych środowiskowych, kluczy API ani backendu.
+Kwoty to fikcyjne dane w USD, nie przeliczone salda rzeczywiste.
+Kod strony, zasoby i konfiguracja statyczna są w paczce.
+Testy i dokumentacja są plikami pomocniczymi repozytorium.
+Nie ma katalogu .git, zależności node_modules, baz danych, raportów
+audytu ani lokalnego panelu podglądu.
+
+Weryfikacja: 12/12 testów DOM przeszło dla tej wersji USD; dostępne
+są wszystkie 66 scenariusze. Kontrola wizualna w prawdziwej przeglądarce
+i zrzuty pozostają niewykonane z powodu ograniczeń środowiska Windows.
+Więcej o kodzie i testach: ASK_IKUGO_INTEGRATION.md.

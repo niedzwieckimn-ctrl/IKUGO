@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'">
   <meta name="theme-color" content="#101c2b">
   <meta name="description" content="IKUGO connects import and distribution operations from supplier to B2B customer: purchasing, inbound shipments, stock, orders, fulfilment and documents.">
   <meta property="og:type" content="website">
@@ -12,6 +13,9 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css?v=import-flow-2">
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="ask-ikugo.css">
+  <script src="ask-ikugo-scenarios.js" defer></script>
+  <script src="ask-ikugo.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -99,14 +103,28 @@
           </div>
         </div>
       </section>
-      <section class="assistant-section section-pad" aria-labelledby="assistant-title">
-        <div class="wrap assistant-grid"><div><p class="eyebrow">05 / A CONVERSATION WITH YOUR BUSINESS</p><h2 id="assistant-title">Big questions.<br>Clearer next steps.</h2><p class="assistant-intro">Ask the built-in AI assistant about supplier purchases, incoming deliveries, stock, order readiness and recorded packing details. Changes to order status require your approval.</p></div>
-          <div class="conversation-demo"><div class="conversation-label"><span class="spark" aria-hidden="true">✳</span> ASK IKUGO <span>ILLUSTRATIVE EXAMPLE</span></div><div class="prompt-buttons" aria-label="Example assistant questions"><button class="prompt active" data-prompt="0" aria-pressed="true">What can I ship today?</button><button class="prompt" data-prompt="1" aria-pressed="false">What needs restocking?</button><button class="prompt" data-prompt="2" aria-pressed="false">What’s in this shipment?</button><button class="prompt" data-prompt="3" aria-pressed="false">Which inbound deliveries need attention?</button></div><div class="answer" aria-live="polite" aria-atomic="true"><span class="answer-label">THE KIND OF CLARITY YOU NEED</span><p id="assistant-answer">See which orders have the stock they need, and which are still waiting on missing items.</p></div><p class="assistant-note">Examples translated for this presentation. These are sample texts, not live AI responses. Shipment answers depend on saved records and available tracking information.</p></div>
+      <section class="assistant-section section-pad" id="ask-ikugo" aria-labelledby="assistant-title">
+        <div class="wrap">
+          <div class="section-top"><p class="eyebrow">05 / ASK IKUGO</p><span class="ask-edition">66 EXAMPLES. ONE CONNECTED BUSINESS.</span></div>
+          <div class="ask-heading"><h2 id="assistant-title">Ask about your business.<br>Get answers.<br><em>Take action.</em></h2><div><p class="ask-intro">Explore how IKUGO helps manage inventory, orders, shipments, invoices and everyday operations.</p><p class="ask-invitation">Choose a prepared example. See the data, the decision and the next step.</p><a class="ask-jump" href="#ask-library">Explore the library <span aria-hidden="true">↘</span></a></div></div>
+          <div class="ask-library" id="ask-library">
+            <div class="ask-library-top"><div><span class="ask-company-mark" aria-hidden="true">N</span><div><strong>NOVA</strong><span>Electronics Distribution</span></div></div><p>248 products <span aria-hidden="true">/</span> 1,840 units <span aria-hidden="true">/</span> 37 orders</p></div>
+            <div class="ask-categories" id="ask-categories" role="group" aria-label="Filter examples by category"></div>
+            <div class="ask-tools"><div class="ask-search-wrap"><label for="ask-search">Search the example library</label><div class="ask-search-box"><span aria-hidden="true">⌕</span><input id="ask-search" type="search" maxlength="120" placeholder="Try “powerbank”, “invoice” or “stock count”" autocomplete="off" spellcheck="false" aria-describedby="ask-search-help"><button id="ask-clear-search" type="button" aria-label="Clear search" hidden>×</button></div><p id="ask-search-help">Filters prepared examples. No question is sent.</p></div><button id="ask-all" class="ask-button ask-all" type="button">Browse all 66 <span aria-hidden="true">↗</span></button></div>
+            <div class="ask-workspace" id="ask-workspace">
+              <aside class="ask-browser" aria-label="Example selection"><div class="ask-list-heading"><h3 id="ask-list-title">Inventory &amp; availability</h3><p id="ask-result-count"></p></div><ol id="ask-list" class="ask-list"></ol><div id="ask-empty" class="ask-empty" hidden><strong>No matching examples.</strong><p>Try a shorter search or explore all categories.</p><button type="button" id="ask-reset" class="ask-button">Clear filters</button></div><nav class="ask-pages" aria-label="Example list pages"><button id="ask-page-prev" type="button" aria-label="Previous page of examples">←</button><span id="ask-page-count"></span><button id="ask-page-next" type="button" aria-label="Next page of examples">→</button></nav></aside>
+              <div class="ask-detail-shell"><article id="ask-detail" aria-labelledby="ask-detail-title"></article><nav id="ask-sequence" class="ask-sequence" aria-label="Move between examples"><button id="ask-prev" type="button"><span aria-hidden="true">←</span> Previous example</button><span id="ask-position"></span><button id="ask-next" type="button">Next example <span aria-hidden="true">→</span></button></nav></div>
+            </div>
+            <p class="ask-disclaimer"><span aria-hidden="true">◇</span> Illustrative examples using fictional NOVA business data. No live operations are performed.</p>
+            <p class="ask-sr-only" id="ask-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+            <noscript><p class="ask-noscript">Enable JavaScript to browse the 66 prepared examples. This library works locally and does not connect to an agent or business system.</p></noscript>
+          </div>
+          <div class="ask-footnote"><span>READ. UNDERSTAND. ACT WITH CONTROL.</span><p>Supported actions follow the application’s permissions and approval steps.</p></div>
         </div>
       </section>
       <section class="faq-section section-pad wrap" id="questions" aria-labelledby="faq-title"><div class="faq-heading"><p class="eyebrow">A FEW GOOD QUESTIONS</p><h2 id="faq-title">Good to know.</h2></div><div class="faqs">
         <details><summary>Who is IKUGO built for?<span aria-hidden="true">+</span></summary><p>IKUGO is an operations platform for import and distribution businesses. It connects supplier purchases and inbound shipments with inventory, B2B sales, reservations, fulfilment, documents and customer delivery.</p></details>
-        <details><summary>Is this a live version of the app?<span aria-hidden="true">+</span></summary><p>This is an interactive product presentation. The examples are fictional and explain the workflow without giving access to a live application or business records.</p></details>
+        <details><summary>Is this a live version of the app?<span aria-hidden="true">+</span></summary><p>This is an interactive product presentation. ASK IKUGO is a library of prepared examples using fictional NOVA business data. It does not run a live AI agent or perform business operations. It has no connection to customer records or the production application.</p></details>
         <details><summary>Does IKUGO include a B2B Customer Portal?<span aria-hidden="true">+</span></summary><p>Yes. Business buyers can view product availability and their prices, place orders, follow order status and access shared invoices. The portal connects the customer’s experience with the wider import and distribution workflow.</p></details>
         <details><summary>Can I fulfil an order in parts?<span aria-hidden="true">+</span></summary><p>Yes. Partial fulfilment lets you work with quantities already allocated to invoices and those still outstanding, while keeping them linked to the original order.</p></details>
       </div></section>

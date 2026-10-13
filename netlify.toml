@@ -4,6 +4,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
