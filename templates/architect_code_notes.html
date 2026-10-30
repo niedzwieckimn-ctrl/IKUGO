@@ -1,0 +1,7 @@
+{% if private_code_notes %}
+<h3>Prywatne opisy kodów</h3>
+<p>Widoczne wyłącznie dla właściciela kodu i uprawnionej administracji IKUGO.</p>
+<div style="overflow:auto"><table><thead><tr><th>Kod</th><th>Klient / projekt</th><th>Projekt</th><th>Wariant</th></tr></thead><tbody>
+{% for note in private_code_notes %}<tr><td>{% for code in codes %}{% if code.id|string == note.code_id|string %}{{ code.code }}{% endif %}{% endfor %}</td><td>{{ note.note }}</td><td>{{ note.project.name if note.project else '—' }}</td><td>{{ note.variant.name if note.variant else '—' }}</td></tr>{% endfor %}
+</tbody></table></div>
+{% endif %}
